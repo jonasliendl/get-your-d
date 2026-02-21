@@ -26,6 +26,7 @@ export default function VitaminDCalculator() {
     defaultValues: {
       weightKg: '' as unknown as number,
       currentLevel: '' as unknown as number,
+      contactKey: '',
     },
     onSubmit: ({ value }) => {
       setResult(calculateDailyDose(Number(value.weightKg), Number(value.currentLevel)));
@@ -79,6 +80,26 @@ export default function VitaminDCalculator() {
               placeholder="e.g. 20"
               value={field.state.value ?? ''}
               onChange={(e) => field.handleChange(e.target.valueAsNumber)}
+              onBlur={field.handleBlur}
+              className="w-full rounded-xl border border-foreground/20 bg-background px-4 py-3 text-base placeholder:opacity-30 focus:outline-none focus:ring-2 focus:ring-foreground/30 transition"
+            />
+          </div>
+        )}
+      </form.Field>
+
+      <form.Field name="contactKey">
+        {(field) => (
+          <div className="flex flex-col gap-1.5">
+            <label htmlFor={field.name} className="text-sm font-medium">
+              Contact Key <span className="opacity-50">(email)</span>
+            </label>
+            <input
+              id={field.name}
+              name={field.name}
+              type="email"
+              placeholder="e.g. your.email@example.com"
+              value={field.state.value ?? ''}
+              onChange={(e) => field.handleChange(e.target.value)}
               onBlur={field.handleBlur}
               className="w-full rounded-xl border border-foreground/20 bg-background px-4 py-3 text-base placeholder:opacity-30 focus:outline-none focus:ring-2 focus:ring-foreground/30 transition"
             />
