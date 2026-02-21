@@ -5,7 +5,7 @@ export default function Home() {
         <h1 className="text-4xl font-bold">Get your D</h1>
         <h2 className="text-xl font-bold">Participants</h2>
         <ul>
-          <li>Jonas Liendl</li>
+          <li>Jonas Liendl, Adrian Pfeiffer-Ruiz</li>
         </ul>
       </div>
     </div>
