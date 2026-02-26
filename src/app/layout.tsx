@@ -13,8 +13,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Get your D — Vitamin D Dose Calculator",
-  description: "Calculate your personalized Vitamin D loading dose in seconds.",
+  title: {
+    default: 'Get your D — Vitamin D Dose Calculator',
+    template: '%s — Get your D',
+  },
+  description: 'Calculate your personalized Vitamin D loading dose in seconds.',
 };
 
 export default function RootLayout({
